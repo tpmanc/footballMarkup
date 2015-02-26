@@ -1,0 +1,262 @@
+@-webkit-keyframes showBlock {
+  100% {
+    width: 1148px;
+    height: 563px;
+    left: 1px;
+    top: 1px;
+  }
+}
+@-webkit-keyframes showContent {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes hideContent {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes hideBlock1 {
+  0% {
+    width: 1148px;
+    height: 563px;
+    left: 1px;
+    top: 1px;
+  }
+  100% {
+    width: 573px;
+    height: 360px;
+    left: 1px;
+    top: 1px;
+  }
+}
+@-webkit-keyframes hideBlock2 {
+  0% {
+    width: 1148px;
+    height: 563px;
+    left: 1px;
+    top: 1px;
+  }
+  100% {
+    width: 574px;
+    height: 179px;
+    left: 575px;
+    top: 1px;
+  }
+}
+@-webkit-keyframes hideBlock3 {
+  0% {
+    width: 1148px;
+    height: 563px;
+    left: 1px;
+    top: 1px;
+  }
+  100% {
+    width: 574px;
+    height: 180px;
+    left: 575px;
+    top: 181px;
+  }
+}
+@-webkit-keyframes hideBlock4 {
+  0% {
+    width: 1148px;
+    height: 563px;
+    left: 1px;
+    top: 1px;
+  }
+  100% {
+    width: 381px;
+    height: 202px;
+    left: 1px;
+    top: 362px;
+  }
+}
+@-webkit-keyframes hideBlock5 {
+  0% {
+    width: 1148px;
+    height: 563px;
+    left: 1px;
+    top: 1px;
+  }
+  100% {
+    width: 382px;
+    height: 202px;
+    left: 383px;
+    top: 362px;
+  }
+}
+@-webkit-keyframes hideBlock6 {
+  0% {
+    width: 1148px;
+    height: 563px;
+    left: 1px;
+    top: 1px;
+  }
+  100% {
+    width: 383px;
+    height: 202px;
+    left: 766px;
+    top: 362px;
+  }
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background: url("../img/bg.jpg");
+  background-position: fixed;
+}
+.mainHolder {
+  width: 1150px;
+  height: 565px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #cecece;
+  padding: 1px 0 0 1px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 18px #000;
+  background: url("../img/border.png");
+}
+.mainHolder .block {
+  overflow: hidden;
+  position: relative;
+  float: left;
+  cursor: pointer;
+  margin: 0 1px 1px 0;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+.mainHolder .block:hover .bg img {
+  transform: scale(1.05);
+}
+.mainHolder .block .bg {
+  width: 100%;
+  height: 100%;
+}
+.mainHolder .block .bg img {
+  -webkit-transition: transform 0.2s ease-in;
+  -moz-transition: transform 0.2s ease-in;
+  -o-transition: transform 0.2s ease-in;
+  transition: transform 0.2s ease-in;
+}
+.mainHolder .block .preview {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../img/bgTexture.png");
+}
+.mainHolder .block1 {
+  width: 573px;
+  height: 360px;
+}
+.mainHolder .block2 {
+  width: 574px;
+  height: 179px;
+}
+.mainHolder .block3 {
+  width: 574px;
+  height: 180px;
+}
+.mainHolder .block4 {
+  width: 381px;
+  height: 202px;
+}
+.mainHolder .block5 {
+  width: 382px;
+  height: 202px;
+}
+.mainHolder .block6 {
+  width: 383px;
+  height: 202px;
+}
+.mainHolder .activatedBlock .content {
+  width: 1146px;
+  height: 561px;
+}
+.loader {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  display: none;
+}
+.mainHolder.allClosed .activatedBlock {
+  position: absolute;
+  box-shadow: 0px 0px 5px #000000;
+  -webkit-animation: showBlock 0.3s ease-out;
+  -webkit-animation-fill-mode: forwards;
+  cursor: auto;
+}
+.mainHolder.allClosed .activatedBlock .preview {
+  -webkit-animation: hideContent 0.3s ease-out;
+  -webkit-animation-fill-mode: forwards;
+}
+.mainHolder.allClosed .activatedBlock .content.showContent {
+  display: block;
+  -webkit-animation: showContent 0.3s ease-out;
+  -webkit-animation-fill-mode: forwards;
+}
+.mainHolder.closeBlock .activatedBlock .preview {
+  -webkit-animation: showContent 0.3s ease-out;
+  -webkit-animation-fill-mode: forwards;
+}
+.mainHolder.closeBlock .activatedBlock .content.showContent {
+  -webkit-animation: hideContent 0.3s ease-out;
+  -webkit-animation-fill-mode: forwards;
+}
+.mainHolder.closeBlock .block1.activatedBlock {
+  position: absolute;
+  -webkit-animation: hideBlock1 0.3s ease-out;
+  -webkit-animation-fill-mode: backwards;
+}
+.mainHolder.closeBlock .block2.activatedBlock {
+  position: absolute;
+  -webkit-animation: hideBlock2 0.3s ease-out;
+  -webkit-animation-fill-mode: backwards;
+}
+.mainHolder.closeBlock .block3.activatedBlock {
+  position: absolute;
+  -webkit-animation: hideBlock3 0.3s ease-out;
+  -webkit-animation-fill-mode: backwards;
+}
+.mainHolder.closeBlock .block4.activatedBlock {
+  position: absolute;
+  -webkit-animation: hideBlock4 0.3s ease-out;
+  -webkit-animation-fill-mode: backwards;
+}
+.mainHolder.closeBlock .block5.activatedBlock {
+  position: absolute;
+  -webkit-animation: hideBlock5 0.3s ease-out;
+  -webkit-animation-fill-mode: backwards;
+}
+.mainHolder.closeBlock .block6.activatedBlock {
+  position: absolute;
+  -webkit-animation: hideBlock6 0.3s ease-out;
+  -webkit-animation-fill-mode: backwards;
+}

@@ -1,0 +1,164 @@
+@images: "../img";
+
+// main
+@mainW: 1150px;
+@mainH: 565px;
+@mainPadding: 1px;
+@mainMarginBlocks: 1px;
+
+// all blocks
+@bATransition: all .1s linear;
+@bAHoverBgTransition: transform 0.2s ease-in;
+@bABgTransform: scale(1.05);
+@hoverShadow: 0px 0px 5px #000;
+@showTime: 0.3s;
+
+// block1
+@b1W: 575px - @mainMarginBlocks - @mainPadding;
+@b1H: 362px - @mainMarginBlocks - @mainPadding;
+@b1Bg: #BA5656;
+
+// block2
+@b2W: 576px - @mainMarginBlocks - @mainPadding;
+@b2H: 181px - @mainMarginBlocks - @mainPadding;
+@b2Bg: #5956BA;
+
+// block3
+@b3W: @b2W;
+@b3H: 182px - @mainMarginBlocks - @mainPadding;
+@b3Bg: #56BA79;
+
+// block4
+@b4W: 383px - @mainMarginBlocks - @mainPadding;
+@b4H: 204px - @mainMarginBlocks - @mainPadding;
+@b4Bg: #8858AE;
+
+// block5
+@b5W: 384px - @mainMarginBlocks - @mainPadding;
+@b5H: @b4H;
+@b5Bg: #DBDA6C;
+
+// block6
+@b6W: 385px - @mainMarginBlocks - @mainPadding;
+@b6H: @b4H;
+@b6Bg: #6CDBD7;
+
+// active block
+@activeBlockW: @mainW - 4 * @mainPadding;
+@activeBlockH: @mainH - 4 * @mainPadding;
+
+@import "keyframes.less";
+
+// mixins
+.blocksMargin(){
+	margin: 0 @mainMarginBlocks @mainMarginBlocks 0;
+}
+
+.blocksStyle(){
+	position: relative;
+	float: left;
+	cursor: pointer;
+	
+	.blocksMargin;
+
+	-webkit-transition: @bATransition;
+	-moz-transition: @bATransition;
+	-o-transition: @bATransition;
+	transition: @bATransition;
+}
+
+.allPreviews(){
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: url("@{images}/bgTexture.png");
+}
+.allPreveiwsImg(){
+	-webkit-transition: @bAHoverBgTransition;
+	-moz-transition: @bAHoverBgTransition;
+	-o-transition: @bAHoverBgTransition;
+	transition: @bAHoverBgTransition;
+}
+.allPreveiwsImgHover(){
+	transform: @bABgTransform;
+}
+
+.blockLoop(@n, @i: 1) when (@i =< @n){ // рисуем блоки
+	.block@{i}{
+		width: ~"@{b@{i}W}";
+		height: ~"@{b@{i}H}";
+	}
+	.blockLoop(@n, (@i + 1));
+	
+}
+//-------
+
+html, body{
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	background: url("@{images}/bg.jpg");
+	background-position: fixed;
+}
+
+.mainHolder{
+	width: @mainW;
+	height: @mainH;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	background: #cecece;
+	padding: @mainPadding 0 0 @mainPadding;
+	box-sizing: border-box;
+	box-shadow: 0px 0px 18px #000;
+	background: url("@{images}/border.png");
+	
+	.block{
+		overflow: hidden;
+		.blocksStyle;
+		
+		&:hover{
+			.bg img{
+				.allPreveiwsImgHover;
+			}
+		}
+
+		.bg{
+			width: 100%;
+			height: 100%;
+		}
+		.bg img{
+			.allPreveiwsImg;
+		}
+		.preview{
+			.allPreviews;
+		}
+	}
+
+	.blockLoop(6);
+
+	.activatedBlock .content{
+		width: @activeBlockW;
+		height: @activeBlockH;
+	}
+}
+
+.loader{
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	margin: auto;
+	display: none;
+}
+
+
+@import "animations.less";
