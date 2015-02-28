@@ -1,53 +1,49 @@
 @images: "../img";
 
 // main
-@mainW: 1150px;
-@mainH: 565px;
+@mainW: 768px;
+@mainH: 377px;
 @mainPadding: 1px;
 @mainMarginBlocks: 1px;
 
 // all blocks
-@bATransition: all .1s linear;
+@bATransition: transform .1s linear;
 @bAHoverBgTransition: transform 0.2s ease-in;
 @bABgTransform: scale(1.05);
 @hoverShadow: 0px 0px 5px #000;
 @showTime: 0.3s;
 
 // block1
-@b1W: 575px - @mainMarginBlocks - @mainPadding;
-@b1H: 362px - @mainMarginBlocks - @mainPadding;
-@b1Bg: #BA5656;
+@b1W: 384px - @mainMarginBlocks - @mainPadding;
+@b1H: 242px - @mainMarginBlocks - @mainPadding;
 
 // block2
-@b2W: 576px - @mainMarginBlocks - @mainPadding;
-@b2H: 181px - @mainMarginBlocks - @mainPadding;
-@b2Bg: #5956BA;
+@b2W: 385px - @mainMarginBlocks - @mainPadding;
+@b2H: 121px - @mainMarginBlocks - @mainPadding;
 
 // block3
 @b3W: @b2W;
-@b3H: 182px - @mainMarginBlocks - @mainPadding;
-@b3Bg: #56BA79;
+@b3H: 122px - @mainMarginBlocks - @mainPadding;
 
 // block4
-@b4W: 383px - @mainMarginBlocks - @mainPadding;
-@b4H: 204px - @mainMarginBlocks - @mainPadding;
-@b4Bg: #8858AE;
+@b4W: 256px - @mainMarginBlocks - @mainPadding;
+@b4H: 136px - @mainMarginBlocks - @mainPadding;
 
 // block5
-@b5W: 384px - @mainMarginBlocks - @mainPadding;
+@b5W: 257px - @mainMarginBlocks - @mainPadding;
 @b5H: @b4H;
-@b5Bg: #DBDA6C;
 
 // block6
-@b6W: 385px - @mainMarginBlocks - @mainPadding;
+@b6W: 257px - @mainMarginBlocks - @mainPadding;
 @b6H: @b4H;
-@b6Bg: #6CDBD7;
 
 // active block
-@activeBlockW: @mainW - 4 * @mainPadding;
-@activeBlockH: @mainH - 4 * @mainPadding;
+@activeBlockW: @mainW - 2 * @mainPadding;
+@activeBlockH: @mainH - 2 * @mainPadding;
 
+@import "cssReset.less";
 @import "keyframes.less";
+@import "fonts.less";
 
 // mixins
 .blocksMargin(){
@@ -67,15 +63,8 @@
 	transition: @bATransition;
 }
 
-.allPreviews(){
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	background: url("@{images}/bgTexture.png");
-}
 .allPreveiwsImg(){
+	max-width: 100%;
 	-webkit-transition: @bAHoverBgTransition;
 	-moz-transition: @bAHoverBgTransition;
 	-o-transition: @bAHoverBgTransition;
@@ -95,12 +84,18 @@
 }
 //-------
 
-html, body{
-	padding: 0;
-	margin: 0;
-	overflow: hidden;
+html{
+	font-size: 16px;
+}
+body{
 	background: url("@{images}/bg.jpg");
-	background-position: fixed;
+	background-attachment: fixed;
+	background-position: 50%;
+}
+.clearfix{
+	content:"";
+	display:table;
+	clear:both;
 }
 
 .mainHolder{
@@ -117,12 +112,13 @@ html, body{
 	box-sizing: border-box;
 	box-shadow: 0px 0px 18px #000;
 	background: url("@{images}/border.png");
+	background-size: auto 100% ;
 	
 	.block{
 		overflow: hidden;
 		.blocksStyle;
 		
-		&:hover{
+		&:hover{			
 			.bg img{
 				.allPreveiwsImgHover;
 			}
@@ -136,13 +132,110 @@ html, body{
 			.allPreveiwsImg;
 		}
 		.preview{
-			.allPreviews;
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background: url("@{images}/bgTexture.png");
+			color: #FFF;
+			font-family: ptsans_bold;
+			text-align: center;
 		}
 	}
 
-	.blockLoop(6);
+	.block1{
+		width: @b1W;
+		height: @b1H;
+		background: #FFF;
+		
+		.title{
+			display: inline-block;
+			background: rgba(0,0,0,0.74);
+			font-size: 16px;
+			font-family: HelveticaNeueCyr_LightItalic;
+			margin-top: 12.6%;
+			padding: 1.0666667% 0px;
+		}
+		.score{
+			width: 469px;
+			height: 185px;
+			font-size: 140px;
+			font-family: ebrima;
+			padding: 10px 0px 0px 0px;
+			margin: auto;
+			background: url("@{images}/block1Text.png") no-repeat 50% 50%;
+			background-size: 100% auto;
+			
+			.red{
+				display: inline-block;
+				border-bottom: 5px solid #c23a4c;
+				margin-left: -10px;
+				padding-bottom: 8px;
+			}
+			.blue{
+				display: inline-block;
+				border-bottom: 5px solid #235eb7;
+				padding-bottom: 8px;
+			}
+		}
+	}
+	.block2{
+		width: @b2W;
+		height: @b2H;
+		line-height: @b2H;
+		font-size: 40px;
+		text-shadow: -2px 2px 5px #55586b;
+		text-transform: uppercase;
+		letter-spacing: -1px;
+	}
+	.block3{
+		width: @b3W;
+		height: @b3H;
+		line-height: @b3H;
+	}
+	.block4{
+		width: @b4W;
+		height: @b4H;
+		line-height: @b4H;
+		font-size: 24px;
+		text-transform: uppercase;
+		
+		.blockText{
+			background: url("@{images}/block4Text.png") no-repeat 50% 50%;
+			background-size: 100% auto;
+			padding: 3.960396% 20.20997%;
+		}
+	}
+	.block5{
+		width: @b5W;
+		height: @b5H;
+		line-height: @b5H;
+		font-size: 24px;
+		text-transform: uppercase;
+		
+		.blockText{
+			background: url("@{images}/block5Text.png") no-repeat 50% 50%;
+			background-size: 100% auto;
+			padding: 5.940594% 21.465969%;
+		}
+	}
+	.block6{
+		width: @b6W;
+		height: @b6H;
+		line-height: @b6H;
+		font-size: 24px;
+		text-transform: uppercase;
+		
+		.blockText{
+			background: url("@{images}/block6Text.png") no-repeat 50% 50%;
+			background-size: 100% auto;
+			padding: 0px 9.399478%;
+		}
+	}
 
 	.activatedBlock .content{
+		background: #000;
 		width: @activeBlockW;
 		height: @activeBlockH;
 	}
@@ -160,5 +253,5 @@ html, body{
 	display: none;
 }
 
-
 @import "animations.less";
+@import "1200.less";

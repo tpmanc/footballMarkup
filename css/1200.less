@@ -1,0 +1,97 @@
+@mainWHQ: 1150px;
+@mainHHQ: 565px;
+
+// block1
+@b1WHQ: 575px - @mainMarginBlocks - @mainPadding;
+@b1HHQ: 362px - @mainMarginBlocks - @mainPadding;
+
+// block2
+@b2WHQ: 576px - @mainMarginBlocks - @mainPadding;
+@b2HHQ: 181px - @mainMarginBlocks - @mainPadding;
+
+// block3
+@b3WHQ: @b2WHQ;
+@b3HHQ: 182px - @mainMarginBlocks - @mainPadding;
+
+// block4
+@b4WHQ: 383px - @mainMarginBlocks - @mainPadding;
+@b4HHQ: 204px - @mainMarginBlocks - @mainPadding;
+
+// block5
+@b5WHQ: 384px - @mainMarginBlocks - @mainPadding;
+@b5HHQ: @b4HHQ;
+
+// block6
+@b6WHQ: 385px - @mainMarginBlocks - @mainPadding;
+@b6HHQ: @b4HHQ;
+
+// active block
+@activeBlockWHQ: @mainWHQ - 2 * @mainPadding;
+@activeBlockHHQ: @mainHHQ - 2 * @mainPadding;
+
+.blockLoopHQ(@n, @i: 1) when (@i =< @n){ // рисуем блоки
+	.block@{i}{
+		width: ~"@{b@{i}WHQ}";
+		height: ~"@{b@{i}HHQ}";
+	}
+	.blockLoopHQ(@n, (@i + 1));
+	
+}
+
+@media only screen and (min-width: 1200px) {
+	@import "1200keyframes.less";
+	
+	html{
+		font-size: 24px;
+	}
+
+	.mainHolder{
+		width: @mainWHQ;
+		height: @mainHHQ;
+		min-width: 750px;
+		min-height: 370px;
+
+		.block1{
+			width: @b1WHQ;
+			height: @b1HHQ;
+			
+			.title{
+				font-size: 24px;
+			}
+		}
+		.block2{
+			width: @b2WHQ;
+			height: @b2HHQ;
+			line-height: @b2HHQ;
+			font-size: 60px;
+		}
+		.block3{
+			width: @b3WHQ;
+			height: @b3HHQ;
+			line-height: @b3HHQ;
+		}
+		.block4{
+			width: @b4WHQ;
+			height: @b4HHQ;
+			line-height: @b4HHQ;
+			font-size: 36px;
+		}
+		.block5{
+			width: @b5WHQ;
+			height: @b5HHQ;
+			line-height: @b5HHQ;
+			font-size: 36px;
+		}
+		.block6{
+			width: @b6WHQ;
+			height: @b6HHQ;
+			line-height: @b6HHQ;
+			font-size: 36px;
+		}
+
+		.activatedBlock .content{
+			width: @activeBlockWHQ;
+			height: @activeBlockHHQ;
+		}
+	}
+}

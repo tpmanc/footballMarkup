@@ -21,6 +21,7 @@ $(function(){
 		if( !$('#mainHolder').hasClass('blocked') ){
 			var parent = $(this);
 			var elem = parent.clone();
+			elem.removeClass('bottom').removeClass('right');
 			$('#mainHolder').addClass('blocked');
 			// history.pushState({page: elem}, elem, "?p="+elem);
 			elem.addClass('activatedBlock').offset( parent.position() ).offset();
