@@ -362,9 +362,9 @@ body {
   padding: 1.0666667% 0px;
 }
 .mainHolder .block1 .score {
-  width: 469px;
-  height: 185px;
-  font-size: 140px;
+  width: 313px;
+  height: 123px;
+  font-size: 93px;
   font-family: ebrima;
   padding: 10px 0px 0px 0px;
   margin: auto;
@@ -451,55 +451,55 @@ body {
 .mainHolder.allClosed .activatedBlock {
   position: absolute;
   box-shadow: 0px 0px 5px #000000;
-  -webkit-animation: showBlock 0.3s ease-out;
+  -webkit-animation: showBlock 0.8s ease-out;
   -webkit-animation-fill-mode: forwards;
   cursor: auto;
 }
 .mainHolder.allClosed .activatedBlock .preview {
-  -webkit-animation: hideContent 0.3s ease-out;
+  -webkit-animation: hideContent 0.8s ease-out;
   -webkit-animation-fill-mode: forwards;
 }
 .mainHolder.allClosed .activatedBlock .content.showContent {
   display: block;
-  -webkit-animation: showContent 0.3s ease-out;
+  -webkit-animation: showContent 0.8s ease-out;
   -webkit-animation-fill-mode: forwards;
 }
 .mainHolder.closeBlock .activatedBlock .preview {
-  -webkit-animation: showContent 0.3s ease-out;
+  -webkit-animation: showContent 0.8s ease-out;
   -webkit-animation-fill-mode: forwards;
 }
 .mainHolder.closeBlock .activatedBlock .content.showContent {
-  -webkit-animation: hideContent 0.3s ease-out;
+  -webkit-animation: hideContent 0.8s ease-out;
   -webkit-animation-fill-mode: forwards;
 }
 .mainHolder.closeBlock .block1.activatedBlock {
   position: absolute;
-  -webkit-animation: hideBlock1 0.3s ease-out;
+  -webkit-animation: hideBlock1 0.8s ease-out;
   -webkit-animation-fill-mode: backwards;
 }
 .mainHolder.closeBlock .block2.activatedBlock {
   position: absolute;
-  -webkit-animation: hideBlock2 0.3s ease-out;
+  -webkit-animation: hideBlock2 0.8s ease-out;
   -webkit-animation-fill-mode: backwards;
 }
 .mainHolder.closeBlock .block3.activatedBlock {
   position: absolute;
-  -webkit-animation: hideBlock3 0.3s ease-out;
+  -webkit-animation: hideBlock3 0.8s ease-out;
   -webkit-animation-fill-mode: backwards;
 }
 .mainHolder.closeBlock .block4.activatedBlock {
   position: absolute;
-  -webkit-animation: hideBlock4 0.3s ease-out;
+  -webkit-animation: hideBlock4 0.8s ease-out;
   -webkit-animation-fill-mode: backwards;
 }
 .mainHolder.closeBlock .block5.activatedBlock {
   position: absolute;
-  -webkit-animation: hideBlock5 0.3s ease-out;
+  -webkit-animation: hideBlock5 0.8s ease-out;
   -webkit-animation-fill-mode: backwards;
 }
 .mainHolder.closeBlock .block6.activatedBlock {
   position: absolute;
-  -webkit-animation: hideBlock6 0.3s ease-out;
+  -webkit-animation: hideBlock6 0.8s ease-out;
   -webkit-animation-fill-mode: backwards;
 }
 @media only screen and (min-width: 1200px) {
@@ -632,6 +632,11 @@ body {
   }
   .mainHolder .block1 .title {
     font-size: 24px;
+  }
+  .mainHolder .block1 .score {
+    width: 469px;
+    height: 185px;
+    font-size: 140px;
   }
   .mainHolder .block2 {
     width: 574px;
