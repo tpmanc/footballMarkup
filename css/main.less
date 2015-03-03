@@ -10,6 +10,10 @@
 @topW: @mainW;
 @topH: 91px;
 
+// score block
+@scW: @mainW;
+@scH: 70px;
+
 // all blocks
 @bATransition: transform .1s linear;
 @bAHoverBgTransition: transform 0.2s ease-in;
@@ -181,6 +185,55 @@ body{
 			img{
 				border: 4px solid #191719;
 				border-radius: 44px;
+			}
+		}
+	}
+}
+
+.scoreBlock{
+	width: @scW;
+	height: @scH;
+	margin: 0 auto;
+	
+	.elem{
+		float: left;
+		
+		&:after{
+			content: " ";
+			
+		}
+		
+		.date{
+			font-size: 12px;
+			font-family: ptsans;
+			font-weight: bold;
+			text-transform: uppercase;
+			color: #97c631;
+			letter-spacing: -1px;
+		}
+		.score{
+			position: relative;
+			width: 36px;
+			height: 36px;
+			background: url("@{images}/sprite.png") no-repeat -7px -46px;
+			margin: auto;
+			margin-top: 16px;
+			
+			.text{
+				position: absolute;
+				right: -3px;
+				bottom: -2px;
+				width: 16px;
+				height: 16px;
+				line-height: 16px;
+				background: #FFF;
+				color: #000;
+				font-size: 10px;
+				font-family: ptsans;
+				font-weight: bold;
+				text-align: center;
+				border: 2px solid #c13232;
+				border-radius: 10px;
 			}
 		}
 	}
