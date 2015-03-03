@@ -6,6 +6,10 @@
 @mainPadding: 1px;
 @mainMarginBlocks: 1px;
 
+// top block
+@topW: @mainW;
+@topH: 91px;
+
 // all blocks
 @bATransition: transform .1s linear;
 @bAHoverBgTransition: transform 0.2s ease-in;
@@ -98,13 +102,97 @@ body{
 	clear:both;
 }
 
+.topBlock{
+	width: @topW;
+	height: @topH;
+	margin: 0 auto;
+	
+	.logo{
+		float: left;
+		width: 610px;
+		padding-top: 31px;
+		padding-left: 92px;
+		
+		img{
+			width: 100%;
+		}
+	}
+
+	.userBlock{
+		float: right;
+		width: 324px;
+		height: 145px;
+		background: #16161B;
+		border: 1px solid rgba(42, 44, 47, 0.5);
+		border-top: none;
+		border-radius: 3px;
+		
+		.username{
+			color: #FFF;
+			font-size: 18px;
+			font-family: HelveticaNeueCyr_LightItalic;
+			text-align: center;
+			margin-top: 26px;
+			
+			&:before{
+				content: " ";
+				display: inline-block;
+				width: 49px;
+				height: 14px;
+				background: url("@{images}/sprite.png") no-repeat 0px 0px;
+				margin-right: 14px;
+			}
+
+			&:after{
+				content: " ";
+				display: inline-block;
+				width: 49px;
+				height: 14px;
+				background: url("@{images}/sprite.png") no-repeat 0px -24px;
+				margin-left: 18px;
+			}
+		}
+		.stat{
+			color: #FFF;
+			font-size: 16px;
+			font-family: HelveticaNeueCyr_LightItalic;
+			text-align: center;
+			margin-top: 18px;
+			
+			.border:after{
+				content: " ";
+				position: relative;
+				top: 3px;
+				display: inline-block;
+				width: 1px;
+				background: #FFF;
+				height: 17px;
+				margin: 0 10px;
+			}
+		}
+		.avatar{
+			width: 80px;
+			height: 80px;
+			margin: auto;
+			margin-top: 22px;
+			border-radius: 40px;
+			box-shadow: 6px 8px 10px rgba(117, 117, 117, 0.9);
+			
+			img{
+				border: 4px solid #191719;
+				border-radius: 44px;
+			}
+		}
+	}
+}
+
 .mainHolder{
 	width: @mainW;
 	height: @mainH;
-	position: absolute;
+	position: relative;
 	left: 0;
 	right: 0;
-	top: 0;
+	top: 50px;
 	bottom: 0;
 	margin: auto;
 	background: #cecece;

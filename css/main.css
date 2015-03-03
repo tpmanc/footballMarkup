@@ -300,13 +300,88 @@ body {
   display: table;
   clear: both;
 }
+.topBlock {
+  width: 768px;
+  height: 91px;
+  margin: 0 auto;
+}
+.topBlock .logo {
+  float: left;
+  width: 610px;
+  padding-top: 31px;
+  padding-left: 92px;
+}
+.topBlock .logo img {
+  width: 100%;
+}
+.topBlock .userBlock {
+  float: right;
+  width: 324px;
+  height: 145px;
+  background: #16161B;
+  border: 1px solid rgba(42, 44, 47, 0.5);
+  border-top: none;
+  border-radius: 3px;
+}
+.topBlock .userBlock .username {
+  color: #FFF;
+  font-size: 18px;
+  font-family: HelveticaNeueCyr_LightItalic;
+  text-align: center;
+  margin-top: 26px;
+}
+.topBlock .userBlock .username:before {
+  content: " ";
+  display: inline-block;
+  width: 49px;
+  height: 14px;
+  background: url("../img/sprite.png") no-repeat 0px 0px;
+  margin-right: 14px;
+}
+.topBlock .userBlock .username:after {
+  content: " ";
+  display: inline-block;
+  width: 49px;
+  height: 14px;
+  background: url("../img/sprite.png") no-repeat 0px -24px;
+  margin-left: 18px;
+}
+.topBlock .userBlock .stat {
+  color: #FFF;
+  font-size: 16px;
+  font-family: HelveticaNeueCyr_LightItalic;
+  text-align: center;
+  margin-top: 18px;
+}
+.topBlock .userBlock .stat .border:after {
+  content: " ";
+  position: relative;
+  top: 3px;
+  display: inline-block;
+  width: 1px;
+  background: #FFF;
+  height: 17px;
+  margin: 0 10px;
+}
+.topBlock .userBlock .avatar {
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  margin-top: 22px;
+  border-radius: 40px;
+  box-shadow: 6px 8px 10px rgba(117, 117, 117, 0.9);
+}
+.topBlock .userBlock .avatar img {
+  border: 4px solid #191719;
+  border-radius: 44px;
+}
 .mainHolder {
   width: 768px;
   height: 377px;
-  position: absolute;
+  position: relative;
   left: 0;
   right: 0;
-  top: 0;
+  top: 50px;
   bottom: 0;
   margin: auto;
   background: #cecece;
@@ -709,6 +784,16 @@ body {
   }
   html {
     font-size: 24px;
+  }
+  .topBlock {
+    width: 1150px;
+    height: 191px;
+  }
+  .topBlock .logo {
+    width: 610px;
+  }
+  .topBlock .logo img {
+    width: 100%;
   }
   .mainHolder {
     width: 1150px;

@@ -1,6 +1,10 @@
 @mainWHQ: 1150px;
 @mainHHQ: 565px;
 
+// top block
+@topWHQ: @mainWHQ;
+@topHHQ: 191px;
+
 // block1
 @b1WHQ: 575px - @mainMarginBlocks - @mainPadding;
 @b1HHQ: 362px - @mainMarginBlocks - @mainPadding;
@@ -43,6 +47,19 @@
 	
 	html{
 		font-size: 24px;
+	}
+
+	.topBlock{
+		width: @topWHQ;
+		height: @topHHQ;
+		
+		.logo{
+			width: 610px;
+			
+			img{
+				width: 100%;
+			}
+		}
 	}
 
 	.mainHolder{
