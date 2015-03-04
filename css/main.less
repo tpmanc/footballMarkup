@@ -12,7 +12,7 @@
 
 // score block
 @scW: @mainW;
-@scH: 70px;
+@scH: 58px;
 
 // all blocks
 @bATransition: transform .1s linear;
@@ -180,7 +180,7 @@ body{
 			margin: auto;
 			margin-top: 22px;
 			border-radius: 40px;
-			box-shadow: 6px 8px 10px rgba(117, 117, 117, 0.9);
+			box-shadow: 4px 11px 14px rgba(2, 2, 2, 0.9);
 			
 			img{
 				border: 4px solid #191719;
@@ -193,47 +193,54 @@ body{
 .scoreBlock{
 	width: @scW;
 	height: @scH;
-	margin: 0 auto;
-	
-	.elem{
-		float: left;
-		
-		&:after{
-			content: " ";
-			
+	margin: 66px auto 0px auto;
+	text-align: center;
+
+	.holder{
+		display: inline-block;
+
+		.line{
+			float: left;
+			width: 40px;
+			height: 2px;
+			background: #FFF;
+			margin: 51px 19px 0px 19px;
 		}
-		
-		.date{
-			font-size: 12px;
-			font-family: ptsans;
-			font-weight: bold;
-			text-transform: uppercase;
-			color: #97c631;
-			letter-spacing: -1px;
-		}
-		.score{
-			position: relative;
-			width: 36px;
-			height: 36px;
-			background: url("@{images}/sprite.png") no-repeat -7px -46px;
-			margin: auto;
-			margin-top: 16px;
+		.elem{
+			float: left;
 			
-			.text{
-				position: absolute;
-				right: -3px;
-				bottom: -2px;
-				width: 16px;
-				height: 16px;
-				line-height: 16px;
-				background: #FFF;
-				color: #000;
-				font-size: 10px;
+			.date{
+				font-size: 12px;
 				font-family: ptsans;
 				font-weight: bold;
-				text-align: center;
-				border: 2px solid #c13232;
-				border-radius: 10px;
+				text-transform: uppercase;
+				color: #97c631;
+				letter-spacing: -1px;
+			}
+			.score{
+				position: relative;
+				width: 36px;
+				height: 36px;
+				background: url("@{images}/sprite.png") no-repeat -7px -46px;
+				margin: auto;
+				margin-top: 16px;
+				
+				.text{
+					position: absolute;
+					right: -3px;
+					bottom: -2px;
+					width: 16px;
+					height: 16px;
+					line-height: 16px;
+					background: #FFF;
+					color: #000;
+					font-size: 10px;
+					font-family: ptsans;
+					font-weight: bold;
+					text-align: center;
+					border: 2px solid #c13232;
+					border-radius: 10px;
+				}
 			}
 		}
 	}
@@ -247,7 +254,7 @@ body{
 	right: 0;
 	top: 50px;
 	bottom: 0;
-	margin: auto;
+	margin: 0 auto 20px auto;
 	background: #cecece;
 	padding: @mainPadding 0 0 @mainPadding;
 	box-sizing: border-box;
