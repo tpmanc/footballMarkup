@@ -1,10 +1,13 @@
+@showTime: 0.5s;
+@contentTime: 0.3s;
+
 .mainHolder.allClosed{
 	.activatedBlock{
 		position: absolute;
 		// box-shadow: @hoverShadow;
 		-webkit-animation: showBlock @showTime ease-out;
 		-webkit-animation-fill-mode: forwards;
-		-webkit-animation-delay: @contentTime;
+		// -webkit-animation-delay: @contentTime;
 		cursor: auto;
 	}
 	.activatedBlock .previewHolder{
@@ -16,7 +19,6 @@
 		display: block;
 		-webkit-animation: showContent @contentTime ease-out;
 		-webkit-animation-fill-mode: forwards;
-		// -webkit-animation-delay: @showTime;
 	}
 }
 .mainHolder.closeBlock{

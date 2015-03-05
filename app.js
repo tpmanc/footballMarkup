@@ -31,7 +31,7 @@ $(function(){
 			elem.removeClass('bottom').removeClass('right').addClass('activatedBlock').offset( parent.position() );
 			blocked = true;
 			mainHolder.append( elem );
-			setTimeout(showTimeout, 1100);
+			setTimeout(showTimeout, 800);
 		}
 	});
 	$('body').on('click', '.activatedBlock', function(){
@@ -40,7 +40,7 @@ $(function(){
 			$('#loader').hide();
 			$('.activatedBlock .preview').show();
 			mainHolder.removeClass('allClosed').addClass('closeBlock');
-			setTimeout(hideTimeout, 1100);
+			setTimeout(hideTimeout, 800);
 		}
 	});
 

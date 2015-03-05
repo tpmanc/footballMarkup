@@ -194,11 +194,19 @@ select {
     left: 1px;
     top: 1px;
   }
+  80% {
+    width: 382px;
+    height: 240px;
+    left: 1px;
+    top: 1px;
+    opacity: 1;
+  }
   100% {
     width: 382px;
     height: 240px;
     left: 1px;
     top: 1px;
+    opacity: 0;
   }
 }
 @-webkit-keyframes hideBlock2 {
@@ -672,9 +680,8 @@ body {
 }
 .mainHolder.allClosed .activatedBlock {
   position: absolute;
-  -webkit-animation: showBlock 0.8s ease-out;
+  -webkit-animation: showBlock 0.5s ease-out;
   -webkit-animation-fill-mode: forwards;
-  -webkit-animation-delay: 0.3s;
   cursor: auto;
 }
 .mainHolder.allClosed .activatedBlock .previewHolder {
@@ -692,33 +699,33 @@ body {
 }
 .mainHolder.closeBlock .block1.activatedBlock {
   position: absolute;
-  -webkit-animation: hideBlock1 0.8s ease-out;
+  -webkit-animation: hideBlock1 0.5s ease-out;
   -webkit-animation-fill-mode: backwards;
   -webkit-animation-delay: 0.3s;
 }
 .mainHolder.closeBlock .block2.activatedBlock {
   position: absolute;
-  -webkit-animation: hideBlock2 0.8s ease-out;
+  -webkit-animation: hideBlock2 0.5s ease-out;
   -webkit-animation-fill-mode: backwards;
 }
 .mainHolder.closeBlock .block3.activatedBlock {
   position: absolute;
-  -webkit-animation: hideBlock3 0.8s ease-out;
+  -webkit-animation: hideBlock3 0.5s ease-out;
   -webkit-animation-fill-mode: backwards;
 }
 .mainHolder.closeBlock .block4.activatedBlock {
   position: absolute;
-  -webkit-animation: hideBlock4 0.8s ease-out;
+  -webkit-animation: hideBlock4 0.5s ease-out;
   -webkit-animation-fill-mode: backwards;
 }
 .mainHolder.closeBlock .block5.activatedBlock {
   position: absolute;
-  -webkit-animation: hideBlock5 0.8s ease-out;
+  -webkit-animation: hideBlock5 0.5s ease-out;
   -webkit-animation-fill-mode: backwards;
 }
 .mainHolder.closeBlock .block6.activatedBlock {
   position: absolute;
-  -webkit-animation: hideBlock6 0.8s ease-out;
+  -webkit-animation: hideBlock6 0.5s ease-out;
   -webkit-animation-fill-mode: backwards;
 }
 @media only screen and (min-width: 1200px) {
