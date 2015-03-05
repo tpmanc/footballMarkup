@@ -8,7 +8,7 @@
 
 // top block
 @topW: @mainW;
-@topH: 91px;
+@topH: 128px;
 
 // score block
 @scW: @mainW;
@@ -18,8 +18,9 @@
 @bATransition: transform .1s linear;
 @bAHoverBgTransition: transform 0.2s ease-in;
 @bABgTransform: scale(1.05);
-@hoverShadow: 0px 0px 5px #000;
+// @hoverShadow: 0px 0px 5px #000;
 @showTime: 0.8s;
+@contentTime: 0.3s;
 
 // block1
 @b1W: 384px - @mainMarginBlocks - @mainPadding;
@@ -62,6 +63,7 @@
 	position: relative;
 	float: left;
 	cursor: pointer;
+	background: #000;
 	
 	.blocksMargin;
 
@@ -113,9 +115,9 @@ body{
 	
 	.logo{
 		float: left;
-		width: 610px;
-		padding-top: 31px;
-		padding-left: 92px;
+		width: 53.0435%;
+		padding-top: 2.720367%;
+		padding-left: 8%;
 		
 		img{
 			width: 100%;
@@ -124,8 +126,8 @@ body{
 
 	.userBlock{
 		float: right;
-		width: 324px;
-		height: 145px;
+		width: 28.173913%;
+		height: 76.439791%;
 		background: #16161B;
 		border: 1px solid rgba(42, 44, 47, 0.5);
 		border-top: none;
@@ -133,35 +135,38 @@ body{
 		
 		.username{
 			color: #FFF;
-			font-size: 18px;
-			font-family: HelveticaNeueCyr_LightItalic;
+			font-size: 13px;
+			font-family: HelveticaNeueCyr_Light;
+			font-style: italic;
 			text-align: center;
-			margin-top: 26px;
+			margin-top: 8.0256%;
 			
 			&:before{
 				content: " ";
 				display: inline-block;
-				width: 49px;
+				width: 15.12346%;
 				height: 14px;
-				background: url("@{images}/sprite.png") no-repeat 0px 0px;
+				background: url("@{images}/sprite.png") no-repeat 0px 4px;
+				background-size: 100% auto;
 				margin-right: 14px;
 			}
 
 			&:after{
 				content: " ";
 				display: inline-block;
-				width: 49px;
+				width: 15.12346%;
 				height: 14px;
-				background: url("@{images}/sprite.png") no-repeat 0px -24px;
+				background: url("@{images}/sprite.png") no-repeat 0px -12px;
+				background-size: 100% auto;
 				margin-left: 18px;
 			}
 		}
 		.stat{
 			color: #FFF;
-			font-size: 16px;
-			font-family: HelveticaNeueCyr_LightItalic;
+			font-size: 11px;
+			font-family: HelveticaNeueCyr_Light;
 			text-align: center;
-			margin-top: 18px;
+			margin-top: 5.2256%;
 			
 			.border:after{
 				content: " ";
@@ -170,20 +175,21 @@ body{
 				display: inline-block;
 				width: 1px;
 				background: #FFF;
-				height: 17px;
-				margin: 0 10px;
+				height: 14px;
+				margin: 0 7px;
 			}
 		}
 		.avatar{
-			width: 80px;
-			height: 80px;
+			width: 25%;
+			height: 54%;
 			margin: auto;
-			margin-top: 22px;
+			margin-top: 4px;
 			border-radius: 40px;
 			box-shadow: 4px 11px 14px rgba(2, 2, 2, 0.9);
 			
 			img{
-				border: 4px solid #191719;
+				width: 100%;
+				border: 2px solid #191719;
 				border-radius: 44px;
 			}
 		}
@@ -193,7 +199,7 @@ body{
 .scoreBlock{
 	width: @scW;
 	height: @scH;
-	margin: 66px auto 0px auto;
+	margin: 33px auto 0px auto;
 	text-align: center;
 
 	.holder{
@@ -201,16 +207,16 @@ body{
 
 		.line{
 			float: left;
-			width: 40px;
+			width: 28px;
 			height: 2px;
 			background: #FFF;
-			margin: 51px 19px 0px 19px;
+			margin: 42px 13px 0px 13px;
 		}
 		.elem{
 			float: left;
 			
 			.date{
-				font-size: 12px;
+				font-size: 10px;
 				font-family: ptsans;
 				font-weight: bold;
 				text-transform: uppercase;
@@ -223,7 +229,7 @@ body{
 				height: 36px;
 				background: url("@{images}/sprite.png") no-repeat -7px -46px;
 				margin: auto;
-				margin-top: 16px;
+				margin-top: 10px;
 				
 				.text{
 					position: absolute;
@@ -295,13 +301,13 @@ body{
 	.block1{
 		width: @b1W;
 		height: @b1H;
-		background: #FFF;
 		
 		.title{
 			display: inline-block;
 			background: rgba(0,0,0,0.74);
 			font-size: 16px;
-			font-family: HelveticaNeueCyr_LightItalic;
+			font-family: HelveticaNeueCyr_Light;
+			font-style: italic;
 			margin-top: 12.6%;
 			padding: 1.0666667% 0px;
 		}
@@ -475,6 +481,7 @@ body{
 
 	.activatedBlock .content{
 		background: #000;
+		color: #fff;
 		width: @activeBlockW;
 		height: @activeBlockH;
 	}

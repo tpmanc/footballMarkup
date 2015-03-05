@@ -1,5 +1,6 @@
+var blocked = false;
+
 function showTimeout(){
-	$('#mainHolder').removeClass('blocked');
 	$('.activatedBlock .preview').hide();
 	$.ajax({
 		url: 'ajax.php',
@@ -7,39 +8,45 @@ function showTimeout(){
 		success: function(data){
 			$('.activatedBlock').html(data).find('.content').addClass('showContent');
 		},
-		complete: function(){$('#loader').hide();}
+		complete: function(){
+			$('#loader').hide();
+			blocked = false;
+		}
 	});
 }
 function hideTimeout(){
 	$('.activatedBlock').remove();
 	$('#loader').hide();
-	$('#mainHolder').removeClass('blocked').removeClass('closeBlock').addClass('allClosed');
+	blocked = false;
+	$('#mainHolder').removeClass('closeBlock').addClass('allClosed');
 }
 
 $(function(){
+	var mainHolder = $('#mainHolder');
+
 	$('#mainHolder > div').on('click', function(){
-		if( !$('#mainHolder').hasClass('blocked') ){
+		if( !blocked ){
 			var parent = $(this);
 			var elem = parent.clone();
-			elem.removeClass('bottom').removeClass('right');
-			$('#mainHolder').addClass('blocked');
-			// history.pushState({page: elem}, elem, "?p="+elem);
-			elem.addClass('activatedBlock').offset( parent.position() ).offset();
-			$('#mainHolder').append( elem );
-			setTimeout(showTimeout, 300);
+			elem.removeClass('bottom').removeClass('right').addClass('activatedBlock').offset( parent.position() );
+			blocked = true;
+			mainHolder.append( elem );
+			setTimeout(showTimeout, 1100);
 		}
 	});
 	$('body').on('click', '.activatedBlock', function(){
-		if( !$('#mainHolder').hasClass('blocked') ){
+		if( !blocked ){
+			blocked = true;
 			$('#loader').hide();
 			$('.activatedBlock .preview').show();
-			$('#mainHolder').removeClass('allClosed').addClass('closeBlock');
-			setTimeout(hideTimeout, 300);
+			mainHolder.removeClass('allClosed').addClass('closeBlock');
+			setTimeout(hideTimeout, 1100);
 		}
 	});
 
 	var cl = new CanvasLoader('loader');
 	cl.setShape('spiral');
+	cl.setColor('#ffffff');
 	cl.setDiameter(31);
 	cl.setDensity(72);
 	cl.setSpeed(3);

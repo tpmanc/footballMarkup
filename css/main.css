@@ -280,8 +280,8 @@ select {
   src: url(fonts/PT_Sans-Web-Bold.ttf);
 }
 @font-face {
-  font-family: HelveticaNeueCyr_LightItalic;
-  src: url(fonts/HelveticaNeueCyr-LightItalic.otf);
+  font-family: HelveticaNeueCyr_Light;
+  src: url(fonts/HelveticaNeueCyr-Light.otf);
 }
 @font-face {
   font-family: ebrima;
@@ -302,22 +302,22 @@ body {
 }
 .topBlock {
   width: 768px;
-  height: 91px;
+  height: 128px;
   margin: 0 auto;
 }
 .topBlock .logo {
   float: left;
-  width: 610px;
-  padding-top: 31px;
-  padding-left: 92px;
+  width: 53.0435%;
+  padding-top: 2.720367%;
+  padding-left: 8%;
 }
 .topBlock .logo img {
   width: 100%;
 }
 .topBlock .userBlock {
   float: right;
-  width: 324px;
-  height: 145px;
+  width: 28.173913%;
+  height: 76.439791%;
   background: #16161B;
   border: 1px solid rgba(42, 44, 47, 0.5);
   border-top: none;
@@ -325,33 +325,36 @@ body {
 }
 .topBlock .userBlock .username {
   color: #FFF;
-  font-size: 18px;
-  font-family: HelveticaNeueCyr_LightItalic;
+  font-size: 13px;
+  font-family: HelveticaNeueCyr_Light;
+  font-style: italic;
   text-align: center;
-  margin-top: 26px;
+  margin-top: 8.0256%;
 }
 .topBlock .userBlock .username:before {
   content: " ";
   display: inline-block;
-  width: 49px;
+  width: 15.12346%;
   height: 14px;
-  background: url("../img/sprite.png") no-repeat 0px 0px;
+  background: url("../img/sprite.png") no-repeat 0px 4px;
+  background-size: 100% auto;
   margin-right: 14px;
 }
 .topBlock .userBlock .username:after {
   content: " ";
   display: inline-block;
-  width: 49px;
+  width: 15.12346%;
   height: 14px;
-  background: url("../img/sprite.png") no-repeat 0px -24px;
+  background: url("../img/sprite.png") no-repeat 0px -12px;
+  background-size: 100% auto;
   margin-left: 18px;
 }
 .topBlock .userBlock .stat {
   color: #FFF;
-  font-size: 16px;
-  font-family: HelveticaNeueCyr_LightItalic;
+  font-size: 11px;
+  font-family: HelveticaNeueCyr_Light;
   text-align: center;
-  margin-top: 18px;
+  margin-top: 5.2256%;
 }
 .topBlock .userBlock .stat .border:after {
   content: " ";
@@ -360,25 +363,26 @@ body {
   display: inline-block;
   width: 1px;
   background: #FFF;
-  height: 17px;
-  margin: 0 10px;
+  height: 14px;
+  margin: 0 7px;
 }
 .topBlock .userBlock .avatar {
-  width: 80px;
-  height: 80px;
+  width: 25%;
+  height: 54%;
   margin: auto;
-  margin-top: 22px;
+  margin-top: 4px;
   border-radius: 40px;
   box-shadow: 4px 11px 14px rgba(2, 2, 2, 0.9);
 }
 .topBlock .userBlock .avatar img {
-  border: 4px solid #191719;
+  width: 100%;
+  border: 2px solid #191719;
   border-radius: 44px;
 }
 .scoreBlock {
   width: 768px;
   height: 58px;
-  margin: 66px auto 0px auto;
+  margin: 33px auto 0px auto;
   text-align: center;
 }
 .scoreBlock .holder {
@@ -386,16 +390,16 @@ body {
 }
 .scoreBlock .holder .line {
   float: left;
-  width: 40px;
+  width: 28px;
   height: 2px;
   background: #FFF;
-  margin: 51px 19px 0px 19px;
+  margin: 42px 13px 0px 13px;
 }
 .scoreBlock .holder .elem {
   float: left;
 }
 .scoreBlock .holder .elem .date {
-  font-size: 12px;
+  font-size: 10px;
   font-family: ptsans;
   font-weight: bold;
   text-transform: uppercase;
@@ -408,7 +412,7 @@ body {
   height: 36px;
   background: url("../img/sprite.png") no-repeat -7px -46px;
   margin: auto;
-  margin-top: 16px;
+  margin-top: 10px;
 }
 .scoreBlock .holder .elem .score .text {
   position: absolute;
@@ -447,6 +451,7 @@ body {
   position: relative;
   float: left;
   cursor: pointer;
+  background: #000;
   margin: 0 1px 1px 0;
   -webkit-transition: transform 0.1s linear;
   -moz-transition: transform 0.1s linear;
@@ -481,13 +486,13 @@ body {
 .mainHolder .block1 {
   width: 382px;
   height: 240px;
-  background: #FFF;
 }
 .mainHolder .block1 .title {
   display: inline-block;
   background: rgba(0, 0, 0, 0.74);
   font-size: 16px;
-  font-family: HelveticaNeueCyr_LightItalic;
+  font-family: HelveticaNeueCyr_Light;
+  font-style: italic;
   margin-top: 12.6%;
   padding: 1.0666667% 0px;
 }
@@ -650,6 +655,7 @@ body {
 }
 .mainHolder .activatedBlock .content {
   background: #000;
+  color: #fff;
   width: 766px;
   height: 375px;
 }
@@ -666,32 +672,29 @@ body {
 }
 .mainHolder.allClosed .activatedBlock {
   position: absolute;
-  box-shadow: 0px 0px 5px #000000;
   -webkit-animation: showBlock 0.8s ease-out;
   -webkit-animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.3s;
   cursor: auto;
 }
-.mainHolder.allClosed .activatedBlock .preview {
-  -webkit-animation: hideContent 0.8s ease-out;
+.mainHolder.allClosed .activatedBlock .previewHolder {
+  -webkit-animation: hideContent 0.3s ease-out;
   -webkit-animation-fill-mode: forwards;
 }
 .mainHolder.allClosed .activatedBlock .content.showContent {
   display: block;
-  -webkit-animation: showContent 0.8s ease-out;
-  -webkit-animation-fill-mode: forwards;
-}
-.mainHolder.closeBlock .activatedBlock .preview {
-  -webkit-animation: showContent 0.8s ease-out;
+  -webkit-animation: showContent 0.3s ease-out;
   -webkit-animation-fill-mode: forwards;
 }
 .mainHolder.closeBlock .activatedBlock .content.showContent {
-  -webkit-animation: hideContent 0.8s ease-out;
+  -webkit-animation: hideContent 0.3s ease-out;
   -webkit-animation-fill-mode: forwards;
 }
 .mainHolder.closeBlock .block1.activatedBlock {
   position: absolute;
   -webkit-animation: hideBlock1 0.8s ease-out;
   -webkit-animation-fill-mode: backwards;
+  -webkit-animation-delay: 0.3s;
 }
 .mainHolder.closeBlock .block2.activatedBlock {
   position: absolute;
@@ -756,11 +759,19 @@ body {
       left: 1px;
       top: 1px;
     }
+    80% {
+      width: 573px;
+      height: 360px;
+      left: 1px;
+      top: 1px;
+      opacity: 1;
+    }
     100% {
       width: 573px;
       height: 360px;
       left: 1px;
       top: 1px;
+      opacity: 0;
     }
   }
   @-webkit-keyframes hideBlock2 {
@@ -840,11 +851,56 @@ body {
     width: 1150px;
     height: 191px;
   }
-  .topBlock .logo {
-    width: 610px;
+  .topBlock .userBlock .username {
+    font-size: 18px;
   }
-  .topBlock .logo img {
-    width: 100%;
+  .topBlock .userBlock .username:before {
+    background-position-y: 0px;
+  }
+  .topBlock .userBlock .username:after {
+    background-position-y: -24px;
+  }
+  .topBlock .userBlock .stat {
+    font-size: 16px;
+  }
+  .topBlock .userBlock .stat .border:after {
+    height: 17px;
+    margin: 0 10px;
+  }
+  .topBlock .userBlock .avatar {
+    margin-top: 22px;
+  }
+  .topBlock .userBlock .avatar img {
+    border-width: 4px;
+  }
+  .scoreBlock {
+    width: 1150px;
+    height: 58px;
+    margin: 66px auto 0px auto;
+  }
+  .scoreBlock .holder .line {
+    width: 40px;
+    height: 2px;
+    margin: 51px 19px 0px 19px;
+  }
+  .scoreBlock .holder .elem .date {
+    font-size: 12px;
+  }
+  .scoreBlock .holder .elem .score {
+    width: 36px;
+    height: 36px;
+    background: url("../img/sprite.png") no-repeat -7px -46px;
+    margin-top: 16px;
+  }
+  .scoreBlock .holder .elem .score .text {
+    right: -3px;
+    bottom: -2px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    font-size: 10px;
+    border: 2px solid #c13232;
+    border-radius: 10px;
   }
   .mainHolder {
     width: 1150px;

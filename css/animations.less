@@ -1,37 +1,42 @@
 .mainHolder.allClosed{
 	.activatedBlock{
 		position: absolute;
-		box-shadow: @hoverShadow;
+		// box-shadow: @hoverShadow;
 		-webkit-animation: showBlock @showTime ease-out;
 		-webkit-animation-fill-mode: forwards;
+		-webkit-animation-delay: @contentTime;
 		cursor: auto;
 	}
-	.activatedBlock .preview{
-		-webkit-animation: hideContent @showTime ease-out;
+	.activatedBlock .previewHolder{
+		-webkit-animation: hideContent @contentTime ease-out;
 		-webkit-animation-fill-mode: forwards;
 	}
 
 	.activatedBlock .content.showContent{
 		display: block;
-		-webkit-animation: showContent @showTime ease-out;
+		-webkit-animation: showContent @contentTime ease-out;
 		-webkit-animation-fill-mode: forwards;
+		// -webkit-animation-delay: @showTime;
 	}
 }
 .mainHolder.closeBlock{
-	.activatedBlock .preview{
-		-webkit-animation: showContent @showTime ease-out;
-		-webkit-animation-fill-mode: forwards;
+	.activatedBlock .previewHolder{
+		// -webkit-animation: showContent @contentTime ease-out;
+		// -webkit-animation-fill-mode: forwards;
+		// -webkit-animation-delay: @showTime + @contentTime;
 	}
 
 	.activatedBlock .content.showContent{
-		-webkit-animation: hideContent @showTime ease-out;
+		-webkit-animation: hideContent @contentTime ease-out;
 		-webkit-animation-fill-mode: forwards;
+		// -webkit-animation-delay: @showTime;
 	}
 
 	.block1.activatedBlock{
 		position: absolute;
 		-webkit-animation: hideBlock1 @showTime ease-out;
 		-webkit-animation-fill-mode: backwards;
+		-webkit-animation-delay: @contentTime;
 	}
 	.block2.activatedBlock{
 		position: absolute;

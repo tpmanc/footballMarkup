@@ -5,6 +5,10 @@
 @topWHQ: @mainWHQ;
 @topHHQ: 191px;
 
+// score block
+@scWHQ: @mainWHQ;
+@scHHQ: 58px;
+
 // block1
 @b1WHQ: 575px - @mainMarginBlocks - @mainPadding;
 @b1HHQ: 362px - @mainMarginBlocks - @mainPadding;
@@ -52,12 +56,69 @@
 	.topBlock{
 		width: @topWHQ;
 		height: @topHHQ;
-		
-		.logo{
-			width: 610px;
-			
-			img{
-				width: 100%;
+
+		.userBlock{
+			.username{
+				font-size: 18px;
+				
+				&:before{
+					background-position-y: 0px;
+				}
+
+				&:after{
+					background-position-y: -24px;
+				}
+			}
+			.stat{
+				font-size: 16px;
+				
+				.border:after{
+					height: 17px;
+					margin: 0 10px;
+				}
+			}
+			.avatar{
+				margin-top: 22px;
+				
+				img{
+					border-width: 4px;
+				}
+			}
+		}
+	}
+
+	.scoreBlock{
+		width: @scWHQ;
+		height: @scHHQ;
+		margin: 66px auto 0px auto;
+
+		.holder{
+			.line{
+				width: 40px;
+				height: 2px;
+				margin: 51px 19px 0px 19px;
+			}
+			.elem{
+				.date{
+					font-size: 12px;
+				}
+				.score{
+					width: 36px;
+					height: 36px;
+					background: url("@{images}/sprite.png") no-repeat -7px -46px;
+					margin-top: 16px;
+					
+					.text{
+						right: -3px;
+						bottom: -2px;
+						width: 16px;
+						height: 16px;
+						line-height: 16px;
+						font-size: 10px;
+						border: 2px solid #c13232;
+						border-radius: 10px;
+					}
+				}
 			}
 		}
 	}
