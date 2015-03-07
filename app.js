@@ -28,7 +28,11 @@ $(function(){
 		if( !blocked ){
 			var parent = $(this);
 			var elem = parent.clone();
-			elem.removeClass('bottom').removeClass('right').addClass('activatedBlock').offset( parent.position() );
+			if(elem.hasClass('block2') || elem.hasClass('block3') || elem.hasClass('block6')){
+				elem.removeClass('bottom').removeClass('right').addClass('activatedBlock').offset( {top: parent.position().top, left: parent.position().left + 1} );
+			}else{
+				elem.removeClass('bottom').removeClass('right').addClass('activatedBlock').offset( parent.position() );
+			}
 			blocked = true;
 			mainHolder.append( elem );
 			setTimeout(showTimeout, 800);

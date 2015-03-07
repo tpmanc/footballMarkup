@@ -216,11 +216,19 @@ select {
     left: 1px;
     top: 1px;
   }
+  80% {
+    width: 383px;
+    height: 119px;
+    left: 384px;
+    top: 1px;
+    opacity: 1;
+  }
   100% {
     width: 383px;
     height: 119px;
-    left: 575px;
+    left: 384px;
     top: 1px;
+    opacity: 0;
   }
 }
 @-webkit-keyframes hideBlock3 {
@@ -230,11 +238,19 @@ select {
     left: 1px;
     top: 1px;
   }
+  80% {
+    width: 383px;
+    height: 120px;
+    left: 384px;
+    top: 121px;
+    opacity: 1;
+  }
   100% {
     width: 383px;
     height: 120px;
-    left: 575px;
-    top: 181px;
+    left: 384px;
+    top: 121px;
+    opacity: 0;
   }
 }
 @-webkit-keyframes hideBlock4 {
@@ -244,11 +260,19 @@ select {
     left: 1px;
     top: 1px;
   }
+  80% {
+    width: 254px;
+    height: 134px;
+    left: 1px;
+    top: 242px;
+    opacity: 1;
+  }
   100% {
     width: 254px;
     height: 134px;
     left: 1px;
-    top: 362px;
+    top: 242px;
+    opacity: 0;
   }
 }
 @-webkit-keyframes hideBlock5 {
@@ -258,11 +282,19 @@ select {
     left: 1px;
     top: 1px;
   }
+  80% {
+    width: 255px;
+    height: 134px;
+    left: 256px;
+    top: 242px;
+    opacity: 1;
+  }
   100% {
     width: 255px;
     height: 134px;
-    left: 383px;
-    top: 362px;
+    left: 256px;
+    top: 242px;
+    opacity: 0;
   }
 }
 @-webkit-keyframes hideBlock6 {
@@ -272,11 +304,19 @@ select {
     left: 1px;
     top: 1px;
   }
+  80% {
+    width: 255px;
+    height: 134px;
+    left: 512px;
+    top: 242px;
+    opacity: 1;
+  }
   100% {
     width: 255px;
     height: 134px;
-    left: 766px;
-    top: 362px;
+    left: 512px;
+    top: 242px;
+    opacity: 0;
   }
 }
 @font-face {
@@ -707,26 +747,31 @@ body {
   position: absolute;
   -webkit-animation: hideBlock2 0.5s ease-out;
   -webkit-animation-fill-mode: backwards;
+  -webkit-animation-delay: 0.3s;
 }
 .mainHolder.closeBlock .block3.activatedBlock {
   position: absolute;
   -webkit-animation: hideBlock3 0.5s ease-out;
   -webkit-animation-fill-mode: backwards;
+  -webkit-animation-delay: 0.3s;
 }
 .mainHolder.closeBlock .block4.activatedBlock {
   position: absolute;
   -webkit-animation: hideBlock4 0.5s ease-out;
   -webkit-animation-fill-mode: backwards;
+  -webkit-animation-delay: 0.3s;
 }
 .mainHolder.closeBlock .block5.activatedBlock {
   position: absolute;
   -webkit-animation: hideBlock5 0.5s ease-out;
   -webkit-animation-fill-mode: backwards;
+  -webkit-animation-delay: 0.3s;
 }
 .mainHolder.closeBlock .block6.activatedBlock {
   position: absolute;
   -webkit-animation: hideBlock6 0.5s ease-out;
   -webkit-animation-fill-mode: backwards;
+  -webkit-animation-delay: 0.3s;
 }
 @media only screen and (min-width: 1200px) {
   @-webkit-keyframes showBlock {
@@ -788,11 +833,19 @@ body {
       left: 1px;
       top: 1px;
     }
+    80% {
+      width: 574px;
+      height: 179px;
+      left: 575px;
+      top: 1px;
+      opacity: 1;
+    }
     100% {
       width: 574px;
       height: 179px;
       left: 575px;
       top: 1px;
+      opacity: 0;
     }
   }
   @-webkit-keyframes hideBlock3 {
