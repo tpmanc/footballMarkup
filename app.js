@@ -2,17 +2,20 @@ var blocked = false;
 
 function showTimeout(){
 	$('.activatedBlock .preview').hide();
-	$.ajax({
-		url: 'ajax.php',
-		beforeSend: function(){$('#loader').show();},
-		success: function(data){
-			$('.activatedBlock').html(data).find('.content').addClass('showContent');
-		},
-		complete: function(){
-			$('#loader').hide();
-			blocked = false;
-		}
-	});
+	$('.activatedBlock').html('asjdlasd<br>asdas<br>asdjajksa').find('.content').addClass('showContent');
+	$('#loader').hide();
+	blocked = false;
+	// $.ajax({
+	// 	url: 'ajax.php',
+	// 	beforeSend: function(){$('#loader').show();},
+	// 	success: function(data){
+	// 		$('.activatedBlock').html(data).find('.content').addClass('showContent');
+	// 	},
+	// 	complete: function(){
+	// 		$('#loader').hide();
+	// 		blocked = false;
+	// 	}
+	// });
 }
 function hideTimeout(){
 	$('.activatedBlock').remove();
